@@ -1,14 +1,14 @@
 import logo from '../logo.svg';
 import '../styles/App.css';
+import '../components/ComponentHello';
+import ComponentHello from '../components/ComponentHello';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello World - Hello React
-        </p>
+        <ComponentHello />
       </header>
     </div>
   );
