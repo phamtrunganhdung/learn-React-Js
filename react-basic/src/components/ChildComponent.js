@@ -30,4 +30,30 @@ class ChildComponent extends React.Component {
   }
 }
 
+
+
+//function component
+// const ChildComponent =(props)=>{
+//   return (
+//           <>
+//             <div>
+//                 FirstName: {props.firstName} - LastName: {props.lastName} - Age: {props.age} 
+//             </div>
+//             <div>
+//                 {props.fullName}
+//             </div>
+//             <div className="jobsList">
+//                 {
+//                     props.arrJobs.map((item,index)=>{
+//                         return (
+//                             <div key={item.id}>
+//                                 {item.title} - {item.salary}
+//                             </div>
+//                         )
+//                     })
+//                 }
+//             </div>
+//           </>
+//         );
+// }
 export default ChildComponent;
