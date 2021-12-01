@@ -2,6 +2,7 @@ import logo from '../logo.svg';
 import '../styles/App.css';
 import '../components/ComponentBasic';
 // import ComponentBasic from '../components/ComponentBasic';
+import ComponentForm from '../components/ComponentForm';
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
        {/* <ComponentBasic /> */}
+       <ComponentForm/>
       </header>
     </div>
   );
