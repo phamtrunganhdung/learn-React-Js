@@ -2,10 +2,16 @@ import React from "react";
 
 class ChildComponent extends React.Component {
     state  = {
-        
+        showJobs: false
     }
+  onHandleConditional = ()=>{
+    this.setState({
+      showJobs: !this.state.showJobs
+    });
+  }
   render() {
       let {lastName, firstName, fullName, age, arrJobs} = this.props;
+      let {showJobs} = this.state;
     return (
       <>
         <div>
@@ -15,14 +21,21 @@ class ChildComponent extends React.Component {
             {fullName}
         </div>
         <div className="jobsList">
-            {
-                arrJobs.map((item,index)=>{
-                    return (
+            {showJobs === false ?
+                      <button onClick={()=>this.onHandleConditional()}>Show Jobs</button>         
+                      :
+                      <>
+                        <div>
+                        {arrJobs.map((item,index)=>{
+                        return (
                         <div key={item.id}>
                             {item.title} - {item.salary}
                         </div>
-                    )
-                })
+                          )
+                        })}
+                        </div>  
+                        <button onClick={()=>this.onHandleConditional()} >Hide Jobs</button>    
+                      </>
             }
         </div>
       </>
