@@ -1,7 +1,7 @@
 import logo from '../logo.svg';
 import '../styles/App.css';
 import '../components/ComponentBasic';
-// import ComponentBasic from '../components/ComponentBasic';
+import ComponentBasic from '../components/ComponentBasic';
 import ComponentForm from '../components/ComponentForm';
 
 const App = () => {
@@ -9,8 +9,9 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-       {/* <ComponentBasic /> */}
-       <ComponentForm/>
+       <ComponentBasic />
+       <hr/>
+       <ComponentForm />
       </header>
     </div>
   );
