@@ -35,6 +35,11 @@ class FormComponent extends React.Component {
             fullName: this.state.lastName + " " + this.state.firstName
         });
     }
+    addNewJob =(job)=>{
+        this.setState({
+          jobs: [...this.state.jobs, job]
+        })
+    }
   render() {
     let {lastName, firstName, age, fullName, jobs} = this.state;
     return (
@@ -62,7 +67,9 @@ class FormComponent extends React.Component {
             {fullName}
         </div>
         <div className="child-component">
-          <JobsFormComponent />
+          <JobsFormComponent 
+          addNewJob={this.addNewJob}          
+          />
         <JobsComponent
         arrJobs={jobs}
         />
