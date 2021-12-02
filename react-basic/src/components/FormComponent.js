@@ -1,7 +1,8 @@
 import React from "react";
-import ChildComponent from "./ChildComponent";
+import JobsComponent from "./JobsComponent";
+import JobsFormComponent from "./JobsFormComponent";
 
-class ComponentForm extends React.Component {
+class FormComponent extends React.Component {
     state  = {
         lastName: "",
         firstName: "",
@@ -41,25 +42,28 @@ class ComponentForm extends React.Component {
         <form>
           <label htmlFor="fname">First name:</label>
           <br />
-          <input type="text" value={this.state.firstName} onChange={(event)=> this.onChangeName('firstName',event)} />
+          <input type="text" value={firstName} onChange={(event)=> this.onChangeName('firstName',event)} />
           <br />
           <label htmlFor="lname">Last name:</label>
           <br />
-          <input type="text" value={this.state.lastName} onChange={(event)=> this.onChangeName('lastName',event)} />
+          <input type="text" value={lastName} onChange={(event)=> this.onChangeName('lastName',event)} />
           <br />
           <label htmlFor="fname">Age:</label>
           <br />
-          <input type="text" value={this.state.age} onChange={(event)=> this.onChangeName('age',event)} />
+          <input type="text" value={age} onChange={(event)=> this.onChangeName('age',event)} />
           <br />
           <button type="submit" onClick={(event)=> this.showName(event)} >Submit</button>
           <br />
         </form>
+        <div>
+            FirstName: {firstName} - LastName: {lastName} - Age: {age} 
+        </div>
+        <div>
+            {fullName}
+        </div>
         <div className="child-component">
-        <ChildComponent
-        lastName={lastName} 
-        firstName={firstName} 
-        fullName={fullName} 
-        age={age}
+          <JobsFormComponent />
+        <JobsComponent
         arrJobs={jobs}
         />
         </div>
@@ -68,4 +72,4 @@ class ComponentForm extends React.Component {
   }
 }
 
-export default ComponentForm;
+export default FormComponent;

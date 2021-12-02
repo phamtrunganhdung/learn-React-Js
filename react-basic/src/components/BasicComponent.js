@@ -1,6 +1,6 @@
 import React from "react";
 
-class ComponentBasic extends React.Component {
+class BasicComponent extends React.Component {
   state = {
     name: "ComponentHello",
     status: "Happy",
@@ -38,4 +38,4 @@ class ComponentBasic extends React.Component {
     );
   }
 }
-export default ComponentBasic;
+export default BasicComponent;

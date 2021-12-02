@@ -1,6 +1,6 @@
 import React from "react";
 
-class ChildComponent extends React.Component {
+class JobsComponent extends React.Component {
     state  = {
         showJobs: false
     }
@@ -10,16 +10,10 @@ class ChildComponent extends React.Component {
     });
   }
   render() {
-      let {lastName, firstName, fullName, age, arrJobs} = this.props;
+      let {arrJobs} = this.props;
       let {showJobs} = this.state;
     return (
       <>
-        <div>
-            FirstName: {firstName} - LastName: {lastName} - Age: {age} 
-        </div>
-        <div>
-            {fullName}
-        </div>
         <div className="jobsList">
             {showJobs === false ?
                       <button onClick={()=>this.onHandleConditional()}>Show Jobs</button>         
@@ -46,7 +40,7 @@ class ChildComponent extends React.Component {
 
 
 //function component
-// const ChildComponent =(props)=>{
+// const JobsComponent =(props)=>{
 //   return (
 //           <>
 //             <div>
@@ -69,4 +63,4 @@ class ChildComponent extends React.Component {
 //           </>
 //         );
 // }
-export default ChildComponent;
+export default JobsComponent;
