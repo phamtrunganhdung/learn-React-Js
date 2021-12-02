@@ -1,5 +1,5 @@
 import logo from '../logo.svg';
-import '../styles/App.css';
+import '../styles/App.scss';
 import BasicComponent from '../components/BasicComponent';
 import FormComponent from '../components/FormComponent';
 

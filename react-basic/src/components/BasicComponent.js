@@ -1,4 +1,5 @@
 import React from "react";
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 class BasicComponent extends React.Component {
   state = {
@@ -24,14 +25,15 @@ class BasicComponent extends React.Component {
           <h4>Hello world</h4>
         </div>
         <div className="handling-event">
-          <button onClick={() => this.showName()}>Alert name</button>
-          <button onClick={() => this.showStatus()}>Alert status</button>
-          <br />
+          <button className="btn btn-success" onClick={() => this.showName()}>Alert name</button>
+          <button className="btn btn-primary" onClick={() => this.showStatus()}>Alert status</button>
+          <hr />
           <input
             type="text"
             value={this.state.write}
             onChange={(event) => this.changeContentInput(event)}
           ></input>
+          <hr />
           <p>Write: {this.state.write}</p>
         </div>
       </>

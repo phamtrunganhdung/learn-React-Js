@@ -19,19 +19,19 @@ class JobsComponent extends React.Component {
       <>
         <div className="jobsList">
             {showJobs === false ?
-                      <button onClick={()=>this.onHandleConditional()}>Show Jobs</button>         
+                      <button className="btn btn-primary" onClick={()=>this.onHandleConditional()}>Show Jobs</button>         
                       :
                       <>
                         <div>
                         {arrJobs.map((item,index)=>{
                         return (
                         <div key={item.id}>
-                            {item.title} - {item.salary} $ <button onClick={()=>this.handleDelete(item)} >x</button>
+                            {item.title} - {item.salary} $ <button className="btn btn-danger" onClick={()=>this.handleDelete(item)} >x</button>
                         </div>
                           )
                         })}
                         </div>  
-                        <button onClick={()=>this.onHandleConditional()} >Hide Jobs</button>    
+                        <button className="btn btn-warning" onClick={()=>this.onHandleConditional()} >Hide Jobs</button>    
                       </>
             }
         </div>

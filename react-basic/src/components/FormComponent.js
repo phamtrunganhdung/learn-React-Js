@@ -1,7 +1,7 @@
 import React from "react";
 import JobsComponent from "./JobsComponent";
 import JobsFormComponent from "./JobsFormComponent";
-
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 class FormComponent extends React.Component {
     state  = {
         lastName: "",
@@ -64,7 +64,8 @@ class FormComponent extends React.Component {
           <br />
           <input type="text" value={age} onChange={(event)=> this.onChangeName('age',event)} />
           <br />
-          <button type="submit" onClick={(event)=> this.showName(event)} >Submit</button>
+          <hr />
+          <button className="btn btn-success" type="submit" onClick={(event)=> this.showName(event)} >Submit</button>
           <br />
         </form>
         <div>
@@ -73,6 +74,7 @@ class FormComponent extends React.Component {
         <div>
             {fullName}
         </div>
+        <hr />
         <div className="child-component">
           <JobsFormComponent 
           addNewJob={this.addNewJob}   

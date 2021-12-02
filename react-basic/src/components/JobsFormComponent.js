@@ -35,17 +35,18 @@ class JobsFormComponent extends React.Component {
         return(
             <>
             <form>
-          <label htmlFor="title">Job title</label>
-          <br />
-          <input type="text" value={this.state.title} onChange={(event)=>this.onChangeJobForm("title",event)} />
-          <br />
-          <label htmlFor="salary">Salary</label>
-          <br />
-          <input type="text" value={this.state.salary} onChange={(event)=>this.onChangeJobForm("salary",event)} />
-          <br />
-          <button type="submit" onClick={(event)=>this.onSubmitJob(event)} >Submit</button>
-          <br />
-        </form>
+                <hr />
+                <label htmlFor="title">Job title</label>
+                <br />
+                <input type="text" value={this.state.title} onChange={(event)=>this.onChangeJobForm("title",event)} />
+                <br />
+                <label htmlFor="salary">Salary</label>
+                <br />
+                <input type="text" value={this.state.salary} onChange={(event)=>this.onChangeJobForm("salary",event)} />
+                <br />
+                <button className="btn btn-success" type="submit" onClick={(event)=>this.onSubmitJob(event)} >Add Job</button>
+                <br />
+            </form>
             </>
         )
     }
