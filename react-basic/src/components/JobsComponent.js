@@ -9,6 +9,9 @@ class JobsComponent extends React.Component {
       showJobs: !this.state.showJobs
     });
   }
+  handleDelete= (job)=>{
+    this.props.deleteAJob(job);
+  }
   render() {
       let {arrJobs} = this.props;
       let {showJobs} = this.state;
@@ -23,7 +26,7 @@ class JobsComponent extends React.Component {
                         {arrJobs.map((item,index)=>{
                         return (
                         <div key={item.id}>
-                            {item.title} - {item.salary}
+                            {item.title} - {item.salary} $ <button onClick={()=>this.handleDelete(item)} >x</button>
                         </div>
                           )
                         })}

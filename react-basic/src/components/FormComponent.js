@@ -9,9 +9,9 @@ class FormComponent extends React.Component {
         age: "",
         fullName: "",
         jobs: [
-          {id: 'rbJob1', title:'Developer', salary:'500 $'},
-          {id: 'rbJob2', title:'Tester', salary:'350 $'},
-          {id: 'rbJob3', title:'Project Manager', salary:'900 $'}
+          {id: 'rbJob1', title:'Developer', salary:'500'},
+          {id: 'rbJob2', title:'Tester', salary:'350'},
+          {id: 'rbJob3', title:'Project Manager', salary:'900'}
         ]
     }
     onChangeName =(name,event)=>{
@@ -39,6 +39,13 @@ class FormComponent extends React.Component {
         this.setState({
           jobs: [...this.state.jobs, job]
         })
+    }
+    deleteAJob =(job)=>{
+      let currentJobs = this.state.jobs;
+      currentJobs = currentJobs.filter(item => item.id !== job.id)
+      this.setState({
+        jobs: currentJobs
+      })
     }
   render() {
     let {lastName, firstName, age, fullName, jobs} = this.state;
@@ -68,7 +75,8 @@ class FormComponent extends React.Component {
         </div>
         <div className="child-component">
           <JobsFormComponent 
-          addNewJob={this.addNewJob}          
+          addNewJob={this.addNewJob}   
+          deleteAJob={this.deleteAJob}       
           />
         <JobsComponent
         arrJobs={jobs}
