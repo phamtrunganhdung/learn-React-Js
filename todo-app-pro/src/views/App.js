@@ -3,18 +3,39 @@ import '../styles/App.scss';
 import ListTodo from '../components/ListTodo';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import Nav from '../routes/Nav';
+import Home from '../components/Home';
+import {
+  BrowserRouter,
+  Switch,
+  Route
+} from "react-router-dom";
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
       <header className="App-header">
+        <Nav />
         <img src={logo} className="App-logo" alt="logo" />
         <h2 className="title">
-          Todo app with React Js
+           React Js Basic
         </h2>
-        <ListTodo />
+        <Switch>
+          <Route path="/" exact>
+          <Home />
+          </Route>
+          <Route path="/todo">
+          <ListTodo />
+          </Route>
+          <Route path="/about">
+            
+          </Route>
+        </Switch>
+
       </header>
+
+
       <ToastContainer
 position="top-right"
 autoClose={5000}
@@ -28,6 +49,7 @@ pauseOnHover
 />
 {toast.success()}
     </div>
+    </BrowserRouter>
   );
 }
 
