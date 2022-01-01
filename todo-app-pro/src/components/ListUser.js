@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "../styles/ListUser.scss";
 
 class ListUser extends React.Component {
   state = {
@@ -40,7 +41,9 @@ class ListUser extends React.Component {
                     <td>{item.email}</td>
                     <td>{item.first_name}</td>
                     <td>{item.last_name}</td>
-                    <td>{item.avatar}</td>
+                    <td>
+                      <img src={item.avatar} alt="new" />
+                    </td>
                   </tr>
                 );
               })}
