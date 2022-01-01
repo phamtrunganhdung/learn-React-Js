@@ -7,7 +7,7 @@ class Home extends React.Component {
     return (
       <>
         <a href="https://www.github.com/phamtrunganhdung/learn-React-Js">
-          Let's go
+          Go to my github
         </a>
       </>
     );
