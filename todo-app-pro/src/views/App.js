@@ -7,6 +7,7 @@ import Nav from "../routes/Nav";
 import Home from "../components/Home";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ListUser from "../components/ListUser";
+import DetailUser from "../components/DetailUser";
 
 function App() {
   return (
@@ -23,8 +24,11 @@ function App() {
             <Route path="/todo">
               <ListTodo />
             </Route>
-            <Route path="/user">
+            <Route path="/user" exact>
               <ListUser />
+            </Route>
+            <Route path="/user/:id">
+              <DetailUser />
             </Route>
           </Switch>
         </header>

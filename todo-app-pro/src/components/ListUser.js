@@ -1,11 +1,12 @@
 import React from "react";
 import axios from "axios";
 import "../styles/ListUser.scss";
+import { withRouter } from "react-router-dom";
 
 class ListUser extends React.Component {
   state = {
     listUser: [],
-    page: "https://reqres.in/api/users?page=",
+    page: "https://reqres.in/api/users?page=1",
   };
 
   async componentDidMount() {
@@ -15,6 +16,9 @@ class ListUser extends React.Component {
       listUser: res && res.data && res.data.data ? res.data.data : [],
     });
   }
+  handleViewDetailUser = (user) => {
+    this.props.history.push(`/user/${user.id}`);
+  };
   render() {
     let { listUser } = this.state;
     return (
@@ -27,20 +31,22 @@ class ListUser extends React.Component {
             <thead>
               <tr>
                 <th>Id</th>
-                <th>Email</th>
-                <th>First Name</th>
-                <th>Last Name</th>
+                <th>Full Name</th>
+
                 <th>Avatar</th>
               </tr>
             </thead>
             <tbody>
               {listUser.map((item, index) => {
                 return (
-                  <tr key={item.id}>
+                  <tr
+                    key={item.id}
+                    onClick={() => this.handleViewDetailUser(item)}
+                  >
                     <td>{item.id}</td>
-                    <td>{item.email}</td>
-                    <td>{item.first_name}</td>
-                    <td>{item.last_name}</td>
+                    <td>
+                      {item.first_name} {item.last_name}
+                    </td>
                     <td>
                       <img src={item.avatar} alt="new" />
                     </td>
@@ -55,4 +61,4 @@ class ListUser extends React.Component {
   }
 }
 
-export default ListUser;
+export default withRouter(ListUser);
