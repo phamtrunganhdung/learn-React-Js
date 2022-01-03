@@ -13,9 +13,11 @@ class DetailUser extends React.Component {
       this.setState({
         user: res && res.data && res.data.data ? res.data.data : {},
       });
-      console.log(">>> check res", res);
     }
   }
+  handleBack = () => {
+    this.props.history.push("/user");
+  };
   render() {
     let { user } = this.state;
     let isEmptyObj = Object.keys(user).length === 0;
@@ -48,6 +50,9 @@ class DetailUser extends React.Component {
             </tr>
           </tbody>
         </table>
+        <button className="btn btn-danger" onClick={() => this.handleBack()}>
+          Back
+        </button>
       </>
     );
   }
