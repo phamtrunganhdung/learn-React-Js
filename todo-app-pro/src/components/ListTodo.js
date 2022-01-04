@@ -62,8 +62,8 @@ class ListTodo extends React.Component {
           <AddTodo addNewTodo={this.addNewTodo} />
           <hr />
           <div className="listTodo">
-            <table className="table table-hover table-primary">
-              <thead>
+            <table className="table table-hover">
+              <thead className="table-color">
                 <tr>
                   <th>Number</th>
                   <th>To do</th>
@@ -71,7 +71,7 @@ class ListTodo extends React.Component {
                   <th>U/D</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="table-color">
                 {ListTodo &&
                   ListTodo.length > 0 &&
                   ListTodo.map((item, index) => {

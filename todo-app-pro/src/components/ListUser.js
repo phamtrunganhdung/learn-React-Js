@@ -27,8 +27,8 @@ class ListUser extends React.Component {
           <h4 style={{ color: "#1fc2c2" }}>
             use Axios to get users through the API of Reqres
           </h4>
-          <table className="table table-hover table-primary">
-            <thead>
+          <table className="table table-hover">
+            <thead className="table-color">
               <tr>
                 <th>Id</th>
                 <th>Full Name</th>
@@ -36,7 +36,7 @@ class ListUser extends React.Component {
                 <th>Avatar</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="table-color">
               {listUser.map((item, index) => {
                 return (
                   <tr

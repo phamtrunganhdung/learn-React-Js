@@ -8,12 +8,30 @@ import Home from "../components/Home";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ListUser from "../components/ListUser";
 import DetailUser from "../components/DetailUser";
+import background from "../assets/images/background.jpg";
+import nav_background from "../assets/images/nav_background.jpg";
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <header className="App-header">
+      <div
+        className="App"
+        style={{
+          backgroundImage: `url(${nav_background})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <header
+          className="App-header"
+          style={{
+            backgroundImage: `url(${background})`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
           <Nav />
           <img src={logo} className="App-logo" alt="logo" />
           <h2 className="title">React Js Basic</h2>

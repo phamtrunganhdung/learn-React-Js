@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
+import "../styles/ListUser.scss";
 
 class DetailUser extends React.Component {
   state = {
@@ -24,8 +25,8 @@ class DetailUser extends React.Component {
     return (
       <>
         <h4 style={{ color: "#1fc2c2" }}>Details user{user.id}</h4>
-        <table className="table table-hover table-primary">
-          <thead>
+        <table className="table table-hover">
+          <thead className="table-color">
             <tr>
               <th>Id</th>
               <th>Email</th>
@@ -34,7 +35,7 @@ class DetailUser extends React.Component {
               <th>Avatar</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="table-color">
             <tr key={user.id}>
               {isEmptyObj === false && (
                 <>
