@@ -8,6 +8,7 @@ import Home from "../components/Home";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ListUser from "../components/ListUser";
 import DetailUser from "../components/DetailUser";
+import FormComponent from "../components/FormComponent";
 import background from "../assets/images/background.jpg";
 import nav_background from "../assets/images/nav_background.jpg";
 
@@ -47,6 +48,9 @@ function App() {
             </Route>
             <Route path="/user/:id">
               <DetailUser />
+            </Route>
+            <Route path="/form">
+              <FormComponent />
             </Route>
           </Switch>
         </header>
