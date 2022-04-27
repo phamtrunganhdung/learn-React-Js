@@ -1,0 +1,28 @@
+.modal{
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    position: fixed;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+}
+.modal-header{
+    background-color: lightblue;
+    text-align: right;
+}
+.modal-button-close{
+    margin-right: 20px;
+    color: white;
+    background-color: crimson;
+}
+.modal-input{
+    margin-top: 100px;
+    width: 300px;
+    height: 30px;
+    outline: none;
+}
+
+.show{
+    visibility: visible;
+    opacity: 1;}
