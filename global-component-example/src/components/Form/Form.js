@@ -11,7 +11,7 @@ const Form = () => {
     setUserName(e.target.value);
   };
 
-  const handleOnChangeCheckbox = (e) => {
+  const handleOnChangeCheckbox = () => {
     setCheckedCheckbox(!checkedCheckbox);
   };
 
@@ -24,10 +24,10 @@ const Form = () => {
 
   return (
     <div className="container d-flex flex-md-row flex-sm-column flex-lg-row">
-      <div className="logo col-md-6 col-md-4 col-sm-12 col-lg-6 justify-content-center">
+      <div className="logo col-md-6 col-md-4 col-sm-12 justify-content-center">
         <img src={logo} alt="logo"></img>
       </div>
-      <div className="form d-flex flex-column col-md-6 col-sm-12 col-lg-6 align-items-start">
+      <div className="form d-flex flex-column col-md-6 col-sm-12 align-items-start">
         <p className="pt-2">User Name</p>
         <InputComponent
           ref={inputRef}
